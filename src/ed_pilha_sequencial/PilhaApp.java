@@ -1,4 +1,4 @@
-package ed_pilha;
+package ed_pilha_sequencial;
 
 public class PilhaApp {
 
