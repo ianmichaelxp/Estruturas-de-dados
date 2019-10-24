@@ -31,14 +31,45 @@ public class Pilha
 	public Object pop() 
 	{
 		Object objAux;
-		objAux = this.pilha[this.topo];
+		objAux = this.pilha[this.topo-1];
+		this.pilha[this.topo-1] = null;
 		this.topo--;
 		return objAux;
 	}
 	
 	public Object top() 
 	{
-		return pilha[topo];
+		return pilha[topo-1];
+	}
+	
+	public int size() 
+	{
+		return topo;
+	}
+	
+	public void clear() 
+	{
+		Object[] clear = new Object[ALOCACAO_INICIAL];
+		this.pilha = clear;
+	}
+	
+	public String toString() 
+	{
+		String valores = "";
+		for (int i = 0; i < topo; i++)
+		{
+			if (this.pilha[i] != null) 
+			{
+				if (i == (this.topo - 1)) 
+				{
+					valores += this.pilha[i];
+				} else 
+				{
+					valores += this.pilha[i] + ", ";
+				}
+			}
+		}
+		return valores;
 	}
 	
 }
