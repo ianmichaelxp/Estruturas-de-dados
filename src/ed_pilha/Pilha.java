@@ -4,7 +4,7 @@ public class Pilha
 {
 	private static final int ALOCACAO_INICIAL = 3;
 	private Object[] pilha = new Object[ALOCACAO_INICIAL];
-	private int inseridos;
+	private int topo;
 
 	public void dobrarArray() 
 	{	
@@ -16,5 +16,16 @@ public class Pilha
 		pilha = novoArray;
 	}
 	
+	public void push(Object item)
+	{
+		
+		if(topo == pilha.length)
+			{
+				dobrarArray();
+			}	
+			pilha[topo] = item;
+			topo++;
+
+	}
 	
 }
