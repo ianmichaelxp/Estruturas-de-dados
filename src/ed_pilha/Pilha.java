@@ -28,4 +28,17 @@ public class Pilha
 
 	}
 	
+	public Object pop() 
+	{
+		Object objAux;
+		objAux = this.pilha[this.topo];
+		this.topo--;
+		return objAux;
+	}
+	
+	public Object top() 
+	{
+		return pilha[topo];
+	}
+	
 }
